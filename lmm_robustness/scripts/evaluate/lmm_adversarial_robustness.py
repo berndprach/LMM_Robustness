@@ -26,6 +26,7 @@ os.makedirs(RESULTS_PATH.parent, exist_ok=True)
 parser = argparse.ArgumentParser()
 parser.add_argument("--attack_name", type=str, default="GARounding")
 parser.add_argument("--eps", type=float, default=1.)
+parser.add_argument("-n", "--val-size", type=int, default=1000)
 
 
 def main():
@@ -36,7 +37,7 @@ def main():
     conv_net = nn.Sequential(center, conv_net)
     conv_net.eval()
 
-    train_dl, val_dl = get_data_loader(sizes=(49_000, 1_000), tf="to_tensor")
+    _, val_dl = get_data_loader(sizes=(1, args.val_size), tf="to_tensor")
     attack = ATTACKS[args.attack_name](conv_net, eps=args.eps*0.99)
 
     model = load_lmm()
