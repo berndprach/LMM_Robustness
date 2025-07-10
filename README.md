@@ -12,8 +12,8 @@ python -m pip install -e .
 
 Run scripts (e.g):
 ```bash
-python lmm_robustness/scripts/evaluate/llm_accuracy.py
+python lmm_robustness/scripts/evaluate/lmm_accuracy.py
 python lmm_robustness/scripts/train_conv_net.py
-python lmm_robustness/scripts/evaluate/llm_adversarial_robustness.py
-python lmm_robustness/scripts/plot/llm_adversarial_robustness.py
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py
+python lmm_robustness/scripts/plot/lmm_adversarial_robustness.py
 ```
