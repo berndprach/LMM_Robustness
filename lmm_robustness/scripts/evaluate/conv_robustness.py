@@ -9,8 +9,8 @@ import yaml
 from torch import nn
 from torch.linalg import vector_norm
 
-from lmm_robustness.algorithms.my_attack import MyAttack
-from lmm_robustness.algorithms.my_rounding_attack import MyRoundingAttack
+from lmm_robustness.algorithms.my_attack import Gra
+from lmm_robustness.algorithms.gradient_ascent_attack import GradientAscentAttack
 from lmm_robustness.architecture import simple_conv_net
 from lmm_robustness.architecture.center import CenterImage
 from lmm_robustness.data import cifar10
@@ -78,8 +78,9 @@ def get_loss(model, data_loader, attack=lambda x, y: x):
 
 ATTACKS = {
     "FAB": partial(torchattacks.FAB, norm="L2", eps=10.),
-    "MyAttack": partial(MyAttack, eps=0.5),
-    "MyRoundingAttack": partial(MyRoundingAttack, eps=0.5, iterations=100),
+    "GA": partial(GradientAscentAttack, eps=0.5),
+    "GARounding": partial(GradientAscentAttack, eps=0.5, iterations=100,
+                          int8_rounding=True),
 }
 
 

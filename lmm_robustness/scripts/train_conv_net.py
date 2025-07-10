@@ -80,7 +80,7 @@ def train_model():
         val_accuracies.extend(batch_accuracies.detach().tolist())
 
     val_accuracy = sum(val_accuracies) / len(val_accuracies)
-    print(f"Validation Accuracy: {val_accuracy:.1%}")
+    print(f"\nValidation Accuracy: {val_accuracy:.1%}")
 
     # Save model state-dict:
     torch.save(model.state_dict(), STATE_DICT_PATH)

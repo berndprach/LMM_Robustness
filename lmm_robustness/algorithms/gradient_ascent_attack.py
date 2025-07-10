@@ -12,29 +12,28 @@ def stochastic_rounding(x, step_size):
     return x * step_size
 
 
-class MyRoundingAttack:
-    def __init__(self, model, norm="L2", eps=10., iterations=10):
-        # self.attack = torchattacks.FAB(model, norm=norm, eps=eps)
-        self.attack = torchattacks.FAB(model, norm=norm, eps=10.)
+class GradientAscentAttack:
+    def __init__(self, model, eps=10., iterations=10, int8_rounding=False):
+        self.base_attack = torchattacks.FAB(model, norm="L2", eps=10.)
         self.loss_function = torch.nn.CrossEntropyLoss()
         self.vector_norm = partial(vector_norm, dim=(1, 2, 3), keepdim=True)
         self.model = model
         self.eps = eps
         self.iterations = iterations
+        self.int8_rounding = int8_rounding
+        self.step_size = 0.01
 
     def __call__(self, x_batch, y_batch):
-        x_adv = self.attack(x_batch, y_batch)
+        x_adv = self.base_attack(x_batch, y_batch)
         perturbation = x_adv - x_batch
-        a = torch.where(
-            self.vector_norm(perturbation) > 1e-12,
-            self.parameter(perturbation),
-            torch.randn_like(perturbation),
-        )
+        a = self.parameter(perturbation)
 
         for _ in range(self.iterations):
             a = self.adversarial_step(a, x_batch, y_batch)
-            p = self.adversarial_perturbation(a)
-            a = self.parameter(stochastic_rounding(p, 1/255))
+            if self.int8_rounding:
+                # Apply stochastic rounding to get examples int8 compatible.
+                p = self.adversarial_perturbation(a)
+                a = self.parameter(stochastic_rounding(p, 1/255))
 
         return x_batch + self.adversarial_perturbation(a)
 
@@ -64,5 +63,5 @@ class MyRoundingAttack:
 
         loss.backward()
         with torch.no_grad():
-            a += t.grad * 0.01
+            a += t.grad * self.step_size
         return a
