@@ -1,5 +1,5 @@
 # Robustness of Large Multimodal Models
-Code accompanying the blog post, (Are LMMs Robust to Small Image Perturbations?)[https://berndprach.github.io/blog-posts/2025/07/AreLMMsRobust/]
+Code accompanying the blog post, [Are LMMs Robust to Small Image Perturbations?](https://berndprach.github.io/blog-posts/2025/07/AreLMMsRobust/)
 
 
 ## Usage:
