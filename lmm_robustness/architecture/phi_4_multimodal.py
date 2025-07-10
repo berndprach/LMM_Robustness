@@ -30,7 +30,7 @@ def get_prompt(categories=cifar10.CLASS_NAMES):
         f"<|image_1|> Which one is it? {USER_END}"
         f"{ASSISTANT_START}It shows a"  # No tailing space!
     )
-    print(f"Prompt: \"{prompt}\"")
+    print(f"\nPrompt: \"{prompt}\"\n")
     return prompt
 
 

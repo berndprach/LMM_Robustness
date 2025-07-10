@@ -23,8 +23,6 @@ def main():
 
     plt.figure(figsize=(6, 3))
     for attack_name, attack_results in results.items():
-        if attack_name != "MyRoundingAttack":
-            continue
         perturbations = sorted(attack_results.keys())
         accuracies = [attack_results[eps] for eps in perturbations]
 
@@ -46,6 +44,8 @@ def main():
     plt.grid()
 
     plt.savefig("outputs/lmm_robustness.png", bbox_inches='tight')
+    print("\nSaved plot to outputs/lmm_robustness.png")
+
     plt.tight_layout()
     plt.show()
 
