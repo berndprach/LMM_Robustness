@@ -50,9 +50,9 @@ def main():
             image = to_pillow(x)
             adv_image = to_pillow(adx_x)
 
-            if get_distance(image, adv_image) > args.eps:
-                print(f"Skipping large perturbation "
-                      f"({get_distance(image, adv_image):.2g}).")
+            d = get_distance(image, adv_image)
+            if d > args.eps:
+                print(f"Skipping large perturbation (distance {d:.3g}).")
                 total += 1
                 robust += 1
                 continue
