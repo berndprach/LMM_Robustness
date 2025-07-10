@@ -64,6 +64,8 @@ def main():
 
             print(f"Robust: {robust}/{total} ({robust/total:.1%})", end='\r')
 
+    print(f"\nRobustness for eps={args.eps}: {robust/total:.1%}.")
+
     with open(RESULTS_PATH, "a") as f:
         f.write(f"{args.attack_name}, eps={args.eps}, {robust/total:.1%}\n")
 
