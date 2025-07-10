@@ -9,8 +9,7 @@ import yaml
 from torch import nn
 from torch.linalg import vector_norm
 
-from lmm_robustness.algorithms.my_attack import Gra
-from lmm_robustness.algorithms.gradient_ascent_attack import GradientAscentAttack
+from lmm_robustness.algorithms import GradientAscentAttack
 from lmm_robustness.architecture import simple_conv_net
 from lmm_robustness.architecture.center import CenterImage
 from lmm_robustness.data import cifar10
