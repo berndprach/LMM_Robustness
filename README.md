@@ -10,7 +10,7 @@ source .venv/bin/activate
 python -m pip install -e .
 ```
 
-Run scripts (e.g):
+Run scripts (requires GPU):
 ```bash
 python lmm_robustness/scripts/evaluate/lmm_accuracy.py
 python lmm_robustness/scripts/train_conv_net.py
