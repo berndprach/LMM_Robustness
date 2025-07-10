@@ -7,6 +7,7 @@ import torch
 from PIL import Image
 from torch import nn
 from torchvision.transforms import transforms as tfs
+from torchvision.transforms import ToPILImage  # built-in function
 
 from lmm_robustness.architecture.center import CenterImage
 from lmm_robustness.data import cifar10
@@ -69,10 +70,11 @@ def main():
 
 def to_pillow(x: torch.Tensor) -> Image.Image:
     """Convert a tensor to a PIL Image."""
-    x = torch.clamp(x, 0, 1)
-    x = x.permute(1, 2, 0).detach().cpu().numpy()
-    x = (x * 255).astype('uint8')
-    return Image.fromarray(x)
+    # x = torch.clamp(x, 0, 1)
+    # x = x.permute(1, 2, 0).detach().cpu().numpy()
+    # x = (x * 255).astype('uint8')
+    # return Image.fromarray(x)
+    return ToPILImage()(torch.clamp(x, 0, 1))
 
 
 def get_distance(p: Image.Image, q: Image.Image) -> float:
