@@ -14,8 +14,8 @@ Run scripts (requires a GPU):
 ```bash
 python lmm_robustness/scripts/evaluate/lmm_accuracy.py
 python lmm_robustness/scripts/train_conv_net.py
-python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py 1.
-python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py 2.
-python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py 3.
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=1.
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=2.
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=3.
 python lmm_robustness/scripts/plot/lmm_adversarial_robustness.py
 ```
