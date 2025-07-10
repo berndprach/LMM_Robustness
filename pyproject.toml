@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "LMMRobustness"
+version = "0.1.0"
+dependencies = [
+    "pillow",
+    "scipy",
+    "torchvision",
+    "peft",
+    "backoff",
+    "requests",
+    "torchattacks",
+    "matplotlib",
+    "PyYAML",
+    "transformers==4.51.3",
+]
+
+[project.scripts]
+train_conv_net = "lmm_robustness.train_conv_net:main"
+draw_robustness_plot = "lmm_robustness.scripts.evaluate.conv_robustness:save_robustness_plot"
+plot_robustness = "lmm_robustness.scripts.evaluate.lmm_adversarial_robustness:plot_results"
+
+[tool.setuptools.packages.find]
+where = ["."]
