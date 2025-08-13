@@ -12,10 +12,10 @@ python -m pip install -e .
 
 Run scripts (requires a GPU):
 ```bash
-python src/scripts/evaluate/lmm_accuracy.py
-python src/scripts/train_conv_net.py
-python src/scripts/evaluate/lmm_adversarial_robustness.py --eps=1.
-python src/scripts/evaluate/lmm_adversarial_robustness.py --eps=2.
-python src/scripts/evaluate/lmm_adversarial_robustness.py --eps=3.
-python src/scripts/plot/lmm_adversarial_robustness.py
+python lmm_robustness/scripts/evaluate/lmm_accuracy.py
+python lmm_robustness/scripts/train_conv_net.py
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=1.
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=2.
+python lmm_robustness/scripts/evaluate/lmm_adversarial_robustness.py --eps=3.
+python lmm_robustness/scripts/plot/lmm_adversarial_robustness.py
 ```

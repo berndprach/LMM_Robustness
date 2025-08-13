@@ -3,6 +3,5 @@ __pycache__/
 *.egg-info
 
 /data/
-src/data/
 .venv/
 outputs/state_dict

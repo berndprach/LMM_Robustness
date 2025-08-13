@@ -5,9 +5,9 @@ from typing import Iterable
 import torch
 from matplotlib import pyplot as plt
 
-from src.data import cifar10
-from src.data.batch import batch
-from src.architecture.phi_4_multimodal import (
+from lmm_robustness.data import cifar10
+from lmm_robustness.data.batch import batch
+from lmm_robustness.architecture.phi_4_multimodal import (
     load_lmm, get_prompt, generate_responses
 )
 

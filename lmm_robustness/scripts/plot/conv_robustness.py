@@ -3,7 +3,7 @@ import os
 import yaml
 from matplotlib import pyplot as plt
 
-from src.scripts.evaluate.conv_robustness import OUTPUTS
+from lmm_robustness.scripts.evaluate.conv_robustness import OUTPUTS
 
 
 def save_robustness_plot():
