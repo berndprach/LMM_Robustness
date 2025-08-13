@@ -6,9 +6,9 @@ from torch.optim import SGD
 from torch.optim.lr_scheduler import OneCycleLR
 from torchvision.transforms import transforms as tfs
 
-from lmm_robustness.architecture import simple_conv_net
-from lmm_robustness.architecture.center import CenterImage
-from lmm_robustness.data import cifar10
+from src.architecture import simple_conv_net
+from src.architecture.center import CenterImage
+from src.data import cifar10
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 LR = 0.1

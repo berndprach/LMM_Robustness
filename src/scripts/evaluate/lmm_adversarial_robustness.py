@@ -9,14 +9,14 @@ from torch import nn
 from torchvision.transforms import transforms as tfs
 from torchvision.transforms import ToPILImage  # built-in function
 
-from lmm_robustness.architecture.center import CenterImage
-from lmm_robustness.data import cifar10
-from lmm_robustness.data.cifar10 import get_data_loader
-from lmm_robustness.scripts.evaluate.conv_robustness import (
+from src.architecture.center import CenterImage
+from src.data import cifar10
+from src.data.cifar10 import get_data_loader
+from src.scripts.evaluate.conv_robustness import (
     load_trained_model, ATTACKS
 )
-from lmm_robustness.scripts.evaluate.lmm_accuracy import classify
-from lmm_robustness.architecture.phi_4_multimodal import load_lmm, get_prompt
+from src.scripts.evaluate.lmm_accuracy import classify
+from src.architecture.phi_4_multimodal import load_lmm, get_prompt
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 RESULTS_PATH = Path("outputs", "results.txt")

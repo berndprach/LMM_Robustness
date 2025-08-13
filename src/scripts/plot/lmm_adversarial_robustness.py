@@ -1,6 +1,6 @@
 from matplotlib import pyplot as plt
 
-from lmm_robustness.scripts.evaluate.lmm_adversarial_robustness import (
+from src.scripts.evaluate.lmm_adversarial_robustness import (
     RESULTS_PATH
 )
 
@@ -43,8 +43,8 @@ def main():
     # plt.legend()
     plt.grid()
 
-    plt.savefig("outputs/lmm_robustness.png", bbox_inches='tight')
-    print("\nSaved plot to outputs/lmm_robustness.png")
+    plt.savefig("outputs/src.png", bbox_inches='tight')
+    print("\nSaved plot to outputs/src.png")
 
     plt.tight_layout()
     plt.show()

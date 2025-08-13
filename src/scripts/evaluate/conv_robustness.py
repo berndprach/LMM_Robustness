@@ -9,12 +9,12 @@ import yaml
 from torch import nn
 from torch.linalg import vector_norm
 
-from lmm_robustness.algorithms import GradientAscentAttack
-from lmm_robustness.architecture import simple_conv_net
-from lmm_robustness.architecture.center import CenterImage
-from lmm_robustness.data import cifar10
-from lmm_robustness.data.cifar10 import get_data_loader
-from lmm_robustness.scripts.train_conv_net import STATE_DICT_PATH
+from src.algorithms import GradientAscentAttack
+from src.architecture import simple_conv_net
+from src.architecture.center import CenterImage
+from src.data import cifar10
+from src.data.cifar10 import get_data_loader
+from src.scripts.train_conv_net import STATE_DICT_PATH
 
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 OUTPUTS = Path("outputs", "boundary_distances")

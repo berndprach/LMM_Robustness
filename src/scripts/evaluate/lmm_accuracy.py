@@ -2,11 +2,11 @@ from functools import partial
 
 import torch
 
-from lmm_robustness.architecture.phi_4_multimodal import (
+from src.architecture.phi_4_multimodal import (
     load_lmm, get_prompt, generate_responses
 )
-from lmm_robustness.data import cifar10
-from lmm_robustness.data.batch import batch
+from src.data import cifar10
+from src.data.batch import batch
 
 BATCH_SIZE = 4
 

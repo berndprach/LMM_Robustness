@@ -1,6 +1,6 @@
 from transformers import AutoModelForCausalLM, AutoProcessor, GenerationConfig
 
-from lmm_robustness.data import cifar10
+from src.data import cifar10
 
 MODEL_PATH = "microsoft/Phi-4-multimodal-instruct"
 GENERATION_CONFIG = GenerationConfig.from_pretrained(MODEL_PATH)

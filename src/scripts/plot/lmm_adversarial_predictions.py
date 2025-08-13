@@ -4,7 +4,7 @@ import yaml
 from PIL import Image
 from matplotlib import pyplot as plt
 
-from lmm_robustness.scripts.save import lmm_adversarial_predictions
+from src.scripts.save import lmm_adversarial_predictions
 
 COMBINATIONS_PATH = lmm_adversarial_predictions.PATH / "combined"
 os.makedirs(COMBINATIONS_PATH, exist_ok=True)

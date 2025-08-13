@@ -1,0 +1,13 @@
+
+transformers==4.53.0
+torch
+
+# pillow
+# scipy
+# torchvision
+# peft
+# backoff
+# requests
+# torchattacks
+# matplotlib
+# PyYAML

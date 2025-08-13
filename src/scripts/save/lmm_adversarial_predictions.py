@@ -5,15 +5,15 @@ from pathlib import Path
 import torch
 import yaml
 
-from lmm_robustness.architecture.phi_4_multimodal import (
+from src.architecture.phi_4_multimodal import (
     load_lmm, get_prompt, generate_responses
 )
-from lmm_robustness.data import cifar10
-from lmm_robustness.data.cifar10 import get_data_loader
-from lmm_robustness.scripts.evaluate.conv_robustness import (
+from src.data import cifar10
+from src.data.cifar10 import get_data_loader
+from src.scripts.evaluate.conv_robustness import (
     load_trained_conv_net, ATTACKS,
 )
-from lmm_robustness.scripts.evaluate.lmm_adversarial_robustness import (
+from src.scripts.evaluate.lmm_adversarial_robustness import (
     to_pillow, get_distance,
 )
 
