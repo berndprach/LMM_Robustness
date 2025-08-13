@@ -20,8 +20,10 @@ dependencies = [
 
 [project.scripts]
 train_conv_net = "lmm_robustness.train_conv_net:main"
-draw_robustness_plot = "lmm_robustness.scripts.evaluate.conv_robustness:save_robustness_plot"
-plot_robustness = "lmm_robustness.scripts.evaluate.lmm_adversarial_robustness:plot_results"
+evaluate_accuracy = "lmm_robustness.scripts.evaluate.lmm_accuracy:main"
+evaluate_robustness = "lmm_robustness.scripts.evaluate.lmm_adversarial_robustness:main"
+plot_robustness = "lmm_robustness.scripts.plot.lmm_adversarial_robustness:main"
+
 
 [tool.setuptools.packages.find]
 where = ["."]
